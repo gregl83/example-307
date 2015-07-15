@@ -9,6 +9,12 @@ var destination = config.get('destination');
 
 /* Redirect */
 router.all('/', function(req, res, next) {
+  // redirect server sets header
+  res.append('O-Cookie', 'apollo=thirteen');
+
+  // redirect server sets cookie
+  res.cookie('apollo', 'thirteen');
+
   res.redirect(307, destination);
 });
 

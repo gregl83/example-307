@@ -8,13 +8,13 @@ var destination = config.get('destination');
 
 
 /* Redirect */
-router.all('/redirect', function(req, res, next) {
+router.all('/', function(req, res, next) {
   res.redirect(307, destination);
 });
 
 
 /* Destination */
-router.all('/destination', function(req, res, next) {
+router.all('/results', function(req, res, next) {
   var response = new Response();
 
   // todo collect data and set in response object

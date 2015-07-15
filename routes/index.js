@@ -17,7 +17,13 @@ router.all('/', function(req, res, next) {
 router.all('/results', function(req, res, next) {
   var response = new Response();
 
-  // todo collect data and set in response object
+  var meta = {
+    headers: req.headers,
+    cookies: req.cookies,
+    query: req.query
+  };
+
+  response.meta(meta);
 
   res.json(response);
 });

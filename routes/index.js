@@ -1,12 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var request = require('request');
+var config = require('config');
 var Response = require('api-res');
+
+
+var destination = config.get('destination');
 
 
 /* Redirect */
 router.all('/redirect', function(req, res, next) {
-  // todo 307 redirect
+  res.redirect(307, destination);
 });
 
 

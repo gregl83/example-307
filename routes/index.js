@@ -31,6 +31,8 @@ router.all('/results', function(req, res, next) {
 
   response.meta(meta);
 
+  response.data(req.body);
+
   res.json(response);
 });
 
